@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi, it's Mo Karmel Lewis</title>
+    <!-- Import necessary stylesheets -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.5;
+        }
+        .dark-mode {
+            background-color: #000;
+            color: #fff;
+            transition: 0.5s;
+        }
+        .dark-mode .navbar {
+            background-color: rgba(33, 41, 62, 0.5);
+        }
+        .dark-mode .hero {
+            background-color: rgba(33, 41, 62, 0.7);
+        }
+        .dark-mode .services-grid .card {
+            background-color: rgba(33, 41, 62, 0.4);
+        }
+        .dark-mode .services-grid .card h3 {
+            color: #fff;
+        }
+        .glow {
+            background-color: #fff;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #fff, 0 0 20px rgb(255 255 0 / 50%);
+        }
+        @media (max-width: 768px) {
+            .services-grid {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Navbar -->
+    <nav class="fixed top-0 w-full z-10 bg-transparent" x-data="{ darkMode: false }" @click.away="darkMode = false">
+        <div class="container mx-auto px-4 py-2 flex items-center justify-between">
+            <button class="lg:hidden" @click="darkMode = !darkMode">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10" />
+                </svg>
+            </button>
+            <h1 class="text-lg font-bold">Mo Karmel Lewis</h1>
+            <!-- Logo Placeholder -->
+            <img src="https://source.unsplash.com/featured/?Hi, it's Mo Karmel Lewis." alt="Logo" class="h-8 rounded-full">
+            <button @click="darkMode = !darkMode" class="lg:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="px-4 py-16 bg-cover dark-mode" style="background-image: url('https://source.unsplash.com/featured/?Hi, it's Mo Karmel Lewis.')">
+        <div class="container mx-auto px-4 py-12">
+            <h1 class="text-4xl font-extrabold tracking-tight dark:text-white">Hi, it's Mo Karmel Lewis</h1>
+            <h2 class="text-2xl font-bold dark:text-gray-300">Welcome to my website</h2>
+            <button class="glow py-2 px-4 mt-4">Get Started</button>
+        </div>
+    </section>
+    <!-- Services Grid -->
+    <section class="px-4 py-16">
+        <div class="container mx-auto px-4 py-12">
+            <h2 class="text-3xl font-bold mb-4">My Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 mt-4">
+                <div class="card p-4 rounded-lg shadow-md hover:scale-105 transition duration-500">
+                    <h3 class="text-lg font-bold">Service 1</h3>
+                    <p class="text-gray-600">Description of service 1</p>
+                </div>
+                <div class="card p-4 rounded-lg shadow-md hover:scale-105 transition duration-500">
+                    <h3 class="text-lg font-bold">Service 2</h3>
+                    <p class="text-gray-600">Description of service 2</p>
+                </div>
+                <div class="card p-4 rounded-lg shadow-md hover:scale-105 transition duration-500">
+                    <h3 class="text-lg font-bold">Service 3</h3>
+                    <p class="text-gray-600">Description of service 3</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section class="px-4 py-16">
+        <div class="container mx-auto px-4 py-12">
+            <h2 class="text-3xl font-bold mb-4">Get in Touch</h2>
+            <form class="bg-white shadow-md rounded-lg p-4">
+                <div class="grid grid-cols-1 gap-4">
+                    <input type="text" class="block w-full p-4 text-gray-800 placeholder-gray-400 bg-white rounded-lg" placeholder="Name">
+                    <input type="email" class="block w-full p-4 text-gray-800 placeholder-gray-400 bg-white rounded-lg" placeholder="Email">
+                    <textarea class="block w-full p-4 text-gray-800 placeholder-gray-400 bg-white rounded-lg" placeholder="Message"></textarea>
+                    <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">Send</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- WhatsApp CTA -->
+    <button class="fixed bottom-2 right-2 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full">
+        <svg class="w-6 h-6" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M18.278 16.984a.996.996 0 000-1.367l-4.547 4.547a.996.996 0 00s-1.047 0-1.047-1c0-.495.189-.928.545-1.165a.996.996 0 00-.71-.293A12.995 12.995 0 018.5 11c.131 0 .255.045.368.13a.996.996 0 000 .708l-.15.343a.996.996 0 000 .708l.15.34A.996.996 0 0017 12a.996.996 0 00-.708 0l-.15-.344a.996.996 0 000-.708l.15-.343a.996.996 0 000-.708l-.15-.342a.99.99 0 00-.45-.113c-.275-.12-.518-.294-.71-.5zM12 20a8 8 0 11-8 8 8 8 0 018-8z" clip-rule="evenodd"/>
+        </svg>
+        تواصل معنا
+    </button>
+    <!-- Footer -->
+    <footer class="bg-gray-900 px-4 py-4 text-center text-white">
+        <p>صُنع بذكاء بواسطة براندو</p>
+    </footer>
+</body>
+</html>
